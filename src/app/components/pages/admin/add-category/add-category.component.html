@@ -1,0 +1,25 @@
+<mat-card>
+    <div class="container p-5 ">
+        <div >
+            <div class="col-md-12 text-center">
+               <h1>Add New Categories</h1>
+                <form class="example-form" (ngSubmit)="createCategory()">
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Title</mat-label>
+                      <input name="title" [(ngModel)]="category.title" matInput placeholder="like programming...">
+                    </mat-form-field>
+               
+                <div class="col-md-12">     
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Description</mat-label>
+                        <textarea name="description" [(ngModel)]="category.description" matInput placeholder="this Quizes based on programming.."></textarea>
+                      </mat-form-field>
+                    </div> 
+                      <button type="submit" mat-raised-button color="primary">Add</button>
+                      <button class="m-3" type="reset"mat-stroked-button color="accent">Reset</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</mat-card>

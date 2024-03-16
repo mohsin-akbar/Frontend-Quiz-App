@@ -1,0 +1,34 @@
+<mat-card>
+    <div class="card p-4">
+    <h3>Read the instruction carefully!!</h3>
+    <mat-card-title>#ID-{{quiz.qid}} {{quiz.title}}</mat-card-title>
+    <mat-card-subtitle>{{quiz.description}}</mat-card-subtitle>
+</div>
+<mat-divider></mat-divider>
+<div class="about m-2"><h4>About this quiz !!</h4></div>
+<div class="uls">
+    <ul>
+        <li>
+            you have to submit this quiz with in <b>{{quiz.noOfQuestion*2}} Minutes</b>
+        </li>
+        <li>
+            you can attempt the quiz any no of times
+        </li>
+        <li>
+            the total no of question is <b>{{quiz.noOfQuestion}} Questions</b>
+        </li>
+        <li>
+           The maximum marks is <b>{{quiz.maxMarks}} Marks</b>
+        </li>
+        <li>
+            you can get <b>{{quiz.maxMarks/quiz.noOfQuestion}} marks </b>for each questions
+        </li>
+    </ul>
+    <mat-divider></mat-divider>
+    <div class="text-center">
+
+    <div class="text-danger p-4">Click on Start button for start the quiz!</div>
+    <button [routerLink]="'/start/'+quiz.qid" class="m-2" mat-raised-button color="primary">Start</button>
+</div>
+</div>
+</mat-card>

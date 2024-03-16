@@ -1,0 +1,67 @@
+<mat-card>
+    <h1 class="text-center mt-2">My profile </h1>
+   
+    <mat-card-content>
+          <div class="container text-center">
+            <img src="https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg" alt="Profile" class="profile-image">
+             <h1 class="mt-2">{{user.firstName}} {{user.lastName}}</h1>
+          </div>
+       <div class="container">
+
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <table class="table text-center ml-2">
+                    <tr >
+                        <th>
+                            Username
+                        </th>
+                        <td>
+                            {{user.username}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Email
+                        </th>
+                        <td>
+                            {{user.email}}
+                        </td>
+                    </tr>
+                    <tr *ngIf="user.phone">
+                        <th>
+                            Phone
+                        </th>
+                        <td>
+                           {{user.phone}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Role
+                        </th>
+                        <td>
+                            {{user.role}}
+                        </td>
+                    </tr>
+                    <tr *ngIf="user.enabled">
+                        <th>
+                            Status
+                        </th>
+                        <td>
+                           {{user.enabled?"ACTIVE":"INACTIVE"}}
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+       </div>
+       
+     <mat-card-actions>
+        <button class="m-2" mat-stroked-button color="primary">Update</button>
+        <button mat-stroked-button color="accent">Share</button>
+     </mat-card-actions>
+      
+    </mat-card-content>
+
+</mat-card>

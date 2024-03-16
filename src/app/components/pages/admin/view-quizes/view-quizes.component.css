@@ -1,0 +1,10 @@
+.example-card {
+   width:fit-content;
+   margin:10px;
+  }
+  
+  .example-header-image {
+    background-image: url('../../../../../assets/exam.png');
+    background-size: cover;
+  }
+  

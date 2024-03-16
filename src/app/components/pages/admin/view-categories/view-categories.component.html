@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-list>
+    <div mat-subheader>All Categories</div>
+
+    <mat-list-item *ngFor="let c of categories">
+      <mat-action-list class="m-3">
+        
+        <button [routerLink]="'/admin-dashbord/view-quizes/'+c.cid" mat-button color="primary"><mat-icon mat-list-icon>folder</mat-icon>
+          {{c.title}}</button><button mat-button (click)="deleteCategory(c.cid)" style="float:right;"><mat-icon color="accent">delete</mat-icon></button>
+          <mat-card-subtitle> {{c.description}}  </mat-card-subtitle>
+          
+      </mat-action-list>
+    </mat-list-item>
+
+  </mat-list>
+
+</mat-card>
+
+

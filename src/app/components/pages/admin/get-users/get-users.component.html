@@ -1,0 +1,43 @@
+<div class="container text-center">
+    <div class="heading1 text-light mt-3"><h1>All Users  <li class="fa fa-address-card text-light"></li></h1></div>
+  <table class="table ">
+    <thead >
+      <tr >
+        <th scope="col">#ID</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Status</th>
+        <th scope="col">Role</th> 
+        <th scope="col " ><i class="fa fa-remove"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+  <!-- On rows -->
+  
+  
+  <!-- On cells (`td` or `th`) -->
+  <!-- <tr *ngFor="let email of data"> -->
+    <tr *ngFor="let d of data; ">
+    
+    
+    <td class="table-success">{{d.id}}</td>
+    <td class="table-danger">{{d.firstName}} {{d.lastName}}</td>
+    <td class="table-warning">{{d.username}}</td>
+    <td class="table-info">{{d.email}}</td>
+    <td class="table-light">{{d.phone}}</td>
+    <td class="table-primary">{{d.enabled?'ACTIVE':'INACTIVE'}}</td>
+    <td class="table-success">{{d.role}}</td>
+    
+    <td class="table-info"><button (click)="deleteUser(d.id)" class="btn btn-sm btn-danger"><i class="fa fa-remove"></i></button></td>
+    
+    
+  
+  </tr>
+  </tbody>
+  </table>
+  </div>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

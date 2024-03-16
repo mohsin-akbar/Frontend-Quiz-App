@@ -1,0 +1,48 @@
+<h1 class="text-light">Questions</h1>
+
+<mat-card class="m-2" *ngFor="let q of questions ; let i=index">
+ 
+  <div class="container-flued p-3"><b>Q{{i+1}}</b>  <p [innerHTML]="q.content"></p>
+    <div class="example-button-container">
+      <button (click)="deleteQuestion(q.quesId)" mat-mini-fab color="accent"
+        aria-label="Example icon button with a plus one icon">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <!-- update -->
+
+      <button [routerLink]="'/admin-dashbord/update-question/'+q.quesId" class="m-3" mat-mini-fab color="primary"
+        aria-label="Example icon button with a plus one icon">
+        <mat-icon>update_sharp</mat-icon>
+      </button>
+    </div>
+    <div class="row mt-2 r">
+
+      <div class="col-md-6 "><b>A.)</b>{{q.option1}}</div>
+      <div class="col-md-6 "><b>B.)</b>{{q.option2}}</div>
+    </div>
+
+    <div class="row mt-2 r">
+      <div class="col-md-4"><b>C.)</b>{{q.option3}}</div>
+      <div class="col-md-6 " style="margin-left: 135px;"><b>D.)</b>{{q.option4}}</div>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <b class="r">Answer:{{q.answer}}</b>
+</mat-card>
+ <!-- OOPS section -->
+ <div class="col-md-12 text-center " *ngIf="questions[0]==null">
+  <mat-card>
+    <div class="col-md-12 mt-5">
+      <img src="https://t3.ftcdn.net/jpg/01/01/89/46/240_F_101894688_RVSZUtDfPR6Cr5eBDQI7Qo5pZ01jmyK3.jpg" alter="oops image">
+    </div>
+    <div class="col-md-12 p-3">
+      <h1>No questions are active on this quizz!</h1>
+    </div>
+  </mat-card>
+</div>
+
+<div class="container text-center">
+  <button [routerLink]="'/admin-dashbord/add-question/'+qid" mat-raised-button color="accent">Add Question</button>
+</div>
+
+   

@@ -1,0 +1,32 @@
+<p >
+    <mat-toolbar color="primary" class="nav">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu_book</mat-icon>
+      </button>
+      <span>My Exam Portal</span>
+      <span class="example-spacer "></span>
+      
+      <button *ngIf="!service.isLoggedIn()" routerLink="/login" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>login</mat-icon>
+      </button>
+      <button *ngIf="!service.isLoggedIn()" routerLink="/signup" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>app_registration</mat-icon>
+      </button>
+    <!-- showing name of user -->
+    <span *ngIf="service.isLoggedIn()">{{service.getUser().username}}</span>
+    
+      <button routerLink="/" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>home-icon</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      
+      <button *ngIf="service.isLoggedIn()" (click)="logout()"mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar>
+  </p>
